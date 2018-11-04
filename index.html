@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Maleekiemon</title>
+</head>
+
+<body class="bg-image">
+  <div class="container ">
+    <div class="row">
+      <div class="col-5 justify-content-end">
+        <button onclick="lightscreen()"" class=" mewButts">Light Screen</button>
+        <button onclick="reflect()"" class=" mewButts">Reflect</button>
+        <button onclick="recover()"" class=" mewButts">Recover</button>
+      </div>
+      <div class="col-7 d-flex justify-content-end">
+        <h2 class="pokeName"> Mewtwo </h2>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="offset-7 col-4">
+      <div id="redProgress" class="progress">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-end pt-3">
+      <img src="images/mew2.gif" class="mew2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-2 col-10 d-flex justify-content-start">
+      <h2 class="pokeName"> Red </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div id="redProgress" class="progress col-4" style="margin-left: 3rem">
+    </div>
+    <div class="col-4">
+      <button onclick="attack(0)" class="btn-info">Hydro Pump</button>
+      <button onclick="attack(1)" class="btn-success">Razor Leaf</button>
+      <button onclick="attack(2)" class="btn-danger">Flamethrower</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5 d-flex justify-content-start">
+      <img src="images/3starters.gif" class="starters">
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
