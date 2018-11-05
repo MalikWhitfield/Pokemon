@@ -78,7 +78,7 @@ function recover(num) {
 
 function playAgain() {
   mewtwo.health = 250
-  red.health = 200
+  red.health = 225
   red.hitCount = 0
   attacks[0].value = 10
   attacks[1].value = 20
