@@ -1,6 +1,6 @@
 let red = {
   name: 'Red',
-  health: 200,
+  health: 225,
   spirit: ['fighting', 'faint'],
   hitCount: 0,
 }
@@ -23,7 +23,6 @@ let attacks = [{
   value: 30,
 }]
 
-let hits = 0
 
 let modifiers =
   [
@@ -35,21 +34,38 @@ let modifiers =
       name: 'Reflect',
       value: 10,
       description: 'Decreases the power of attacks by 10'
-    },
+    }, {
+      name: 'Recover',
+      value: 100,
+      description: 'Increases health by 100'
+    }
   ]
 
 function attack(index) {
-  mewtwo.health -= attacks[index].value;
+  mewtwo.health -= attacks[index].value
   red.hitCount++;
   red.health -= 10 + Math.floor((Math.random() * ((30 - 10) + 1)));
+  if (mewtwo.health <= 0) {
+    mewtwo.health = 0
+  }
+  if (red.health <= 0) {
+    red.health = 0
+  }
   console.log(mewtwo.health);
   console.log(red.health);
   update();
   youWin()
+  youLose()
 }
 
-function modify(index) {
-  attacks[index].value -= modifiers[index].value
+function lightScreen(index) {
+  attacks[1].value = 10
+  attacks[2].value = 15
+  update()
+}
+
+function reflect(index) {
+  attacks[0].value = 5
   update()
 }
 
@@ -59,14 +75,14 @@ function recover(num) {
   update()
 }
 
-// function getRandom(min, max) {
-//   return Math.random() * (30 - 10)
-// }
 
 function playAgain() {
   mewtwo.health = 250
   red.health = 200
   red.hitCount = 0
+  attacks[0].value = 10
+  attacks[1].value = 20
+  attacks[2].value = 30
   update()
 }
 
@@ -83,7 +99,7 @@ function update() {
       <p> Hit Count : ${red.hitCount}</p>
   `
   document.getElementById("redProgress").innerHTML = `
-  <div class="progress-bar pbColor" role="progressbar" style="width:${(red.health / 200) * 100}%></div>
+  <div class="progress-bar pbColor" role="progressbar" style="width:${(red.health / 225) * 100}%"></div>
   `
   document.getElementById("mewStats").innerHTML = `
   <div>
@@ -99,9 +115,17 @@ function update() {
 
 function youWin() {
   if (mewtwo.health <= 0)
-    document.write('You Win!')
-} if (red.health <= 0)
-  document.write('You Lose!')
+    alert("You win. I see now that the circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are.")
+}
+function youLose() {
+  if (red.health <= 0)
+    alert("You lose! Behold my powers! I am the strongest Pokémon in the world. Stronger even than Mew.")
+}
+
+
+
+
 
 update()
+youLose()
 youWin()

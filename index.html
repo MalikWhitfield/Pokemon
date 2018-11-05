@@ -15,16 +15,14 @@
   <div class="container ">
     <div class="row">
       <div class="col-5 justify-content-end">
-        <button onclick="modify(0)"" class=" mewButts">Light Screen</button>
-        <button onclick="modify(1)"" class=" mewButts">Reflect</button>
+        <button onclick="lightScreen()"" class=" mewButts">Light Screen</button>
+        <button onclick="reflect()"" class=" mewButts">Reflect</button>
         <button onclick="recover()"" class=" mewButts">Recover</button>
       </div>
       <div class="col-7 d-flex justify-content-end">
         <h2 class="pokeName"> Mewtwo </h2>
-        <p>Health :</p>
       </div>
     </div>
-  </div>
   </div>
   <div class="row">
     <div class="offset-7 col-4">
@@ -38,7 +36,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 d-flex justify-content-end pt-3">
+    <div class="col-6"></div>
+    <div class="col-6 d-flex justify-content-end">
       <img src="images/mew2.gif" class="mew2">
     </div>
   </div>
@@ -49,29 +48,28 @@
   </div>
   <div class="row">
     <div class=" col-4">
-      <div id="redProgress" class="progress" style="margin-left: 3rem" role="progressbar">
+      <div id="redProgress" class="progress" style="margin-left: 3rem">
       </div>
-      <div id="redStats">
+      <div id="redStats" style="margin-left: 3rem">
         <p> Health : 200 </p>
       </div>
     </div>
-    <div id="red-hitCount" class="col-6 d-flex">
+    <div class="col-8 d-flex align-items-center justify-content-start" id="red-hitCount">
       <button onclick="attack(0)" class="btn-success">Razor Leaf</button>
       <button onclick="attack(1)" class="btn-info">Hydro Pump</button>
       <button onclick="attack(2)" class="btn-danger">Flamethrower</button>
       <p> Hit Count : </p>
-    </div>
-    <div class="col-2 d-flex justify-content-center">
-      <button onclick="playAgain()" class="btn-warning">Reset</button>
     </div>
   </div>
   <div class="row">
     <div class="col-5 d-flex justify-content-start">
       <img src="images/3starters.gif" class="starters">
     </div>
-    <div class="col-7">
+    <div class="col-6">
     </div>
-  </div>
+    <div class="col-1 align-items-bottom">
+      <button onclick="playAgain()" class="btn-warning">Reset</button>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
